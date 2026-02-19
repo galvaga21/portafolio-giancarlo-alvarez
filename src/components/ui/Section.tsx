@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
   children: ReactNode;
@@ -18,7 +19,7 @@ export default function Section({ children, id, className = "", delay = 0.2 }: S
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className={`py-20 px-6 sm:px-12 lg:px-24 w-full max-w-7xl mx-auto ${className}`}
+      className={cn("py-20 px-6 sm:px-12 lg:px-24 w-full max-w-7xl mx-auto", className)}
     >
       {children}
     </motion.section>

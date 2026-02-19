@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Send, Mail, MapPin, Linkedin, Github } from "lucide-react";
-import Section from "./Section";
+import Section from "@/components/ui/Section";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -59,43 +59,43 @@ export default function Contact() {
             <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 mb-6">
               Hablemos
             </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
               ¿Tienes un proyecto en mente o quieres colaborar? Estoy siempre abierto a discutir nuevas oportunidades, 
               ideas creativas o visiones a implementar.
             </p>
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-4 text-zinc-300">
-              <div className="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+            <div className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300">
+              <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
                 <Mail size={20} />
               </div>
               <div>
-                <p className="text-sm text-zinc-500 font-medium">Email</p>
-                <a href="mailto:contact@giancarlo.dev" className="text-lg hover:text-indigo-400 transition-colors">
+                <p className="text-sm text-zinc-600 dark:text-zinc-500 font-medium">Email</p>
+                <a href="mailto:contact@giancarlo.dev" className="text-lg hover:text-indigo-600 dark:text-indigo-400 transition-colors">
                   contact@giancarlo.dev
                 </a>
               </div>
             </div>
             
-            <div className="flex items-center gap-4 text-zinc-300">
-              <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400">
+            <div className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300">
+              <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400">
                 <MapPin size={20} />
               </div>
               <div>
-                <p className="text-sm text-zinc-500 font-medium">Ubicación</p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-500 font-medium">Ubicación</p>
                 <p className="text-lg">Lima, Perú</p>
               </div>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-zinc-800">
-            <h3 className="text-zinc-500 font-medium mb-4">Sígueme en</h3>
+          <div className="pt-8 border-t border-zinc-200 dark:border-zinc-800">
+            <h3 className="text-zinc-600 dark:text-zinc-500 font-medium mb-4">Sígueme en</h3>
             <div className="flex gap-4">
-              <a href="https://linkedin.com/in/giancarlo-alvarez" className="p-3 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 transition-all">
+              <a href="https://linkedin.com/in/giancarlo-alvarez" className="p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:border-indigo-500 hover:bg-indigo-100 dark:bg-indigo-500/10 transition-all">
                 <Linkedin size={20} />
               </a>
-              <a href="https://github.com/giancarlo-alvarez" className="p-3 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-indigo-500 hover:bg-indigo-500/10 transition-all">
+              <a href="https://github.com/giancarlo-alvarez" className="p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:border-indigo-500 hover:bg-indigo-100 dark:bg-indigo-500/10 transition-all">
                 <Github size={20} />
               </a>
             </div>
@@ -103,10 +103,10 @@ export default function Contact() {
         </div>
 
         {/* Form Column */}
-        <div className="bg-zinc-900/30 p-8 rounded-2xl border border-zinc-800 backdrop-blur-sm">
+        <div className="bg-white dark:bg-zinc-900/30 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium text-zinc-400">Nombre</label>
+              <label htmlFor="name" className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Nombre</label>
               <input
                 type="text"
                 id="name"
@@ -114,13 +114,13 @@ export default function Contact() {
                 required
                 value={formState.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-600"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 placeholder="Tu nombre completo"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-zinc-400">Email</label>
+              <label htmlFor="email" className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Email</label>
               <input
                 type="email"
                 id="email"
@@ -128,13 +128,13 @@ export default function Contact() {
                 required
                 value={formState.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-600"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                 placeholder="tu@email.com"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-zinc-400">Mensaje</label>
+              <label htmlFor="message" className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Mensaje</label>
               <textarea
                 id="message"
                 name="message"
@@ -142,7 +142,7 @@ export default function Contact() {
                 rows={4}
                 value={formState.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-zinc-950 border border-zinc-800 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-600 resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600 resize-none"
                 placeholder="¿En qué puedo ayudarte?"
               />
             </div>

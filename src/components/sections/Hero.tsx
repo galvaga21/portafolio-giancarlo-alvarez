@@ -34,27 +34,27 @@ export default function Hero() {
         animate="show"
         className="max-w-4xl mx-auto space-y-6"
       >
-        <motion.p variants={item} className="text-lg md:text-xl text-indigo-400 font-medium tracking-wide">
+        <motion.p variants={item} className="text-lg md:text-xl text-indigo-600 dark:text-indigo-400 font-medium tracking-wide">
           Hola, soy
         </motion.p>
         
         <motion.h1 
           variants={item}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 dark:from-white dark:via-slate-200 dark:to-slate-400 pb-2"
         >
           Giancarlo Alvarez
         </motion.h1>
         
         <motion.h2 
           variants={item}
-          className="text-2xl md:text-4xl font-semibold text-slate-400"
+          className="text-2xl md:text-4xl font-semibold text-zinc-600 dark:text-slate-400"
         >
-          Desarrollador Fullstack & <span className="text-indigo-400">Analista Programador</span>
+          Desarrollador Fullstack & <span className="text-indigo-600 dark:text-indigo-400">Analista Programador</span>
         </motion.h2>
 
         <motion.p 
           variants={item}
-          className="max-w-2xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed"
+          className="max-w-2xl mx-auto text-base md:text-lg text-zinc-600 dark:text-slate-400 leading-relaxed"
         >
           Especializado en transformar ideas complejas en soluciones web escalables y modernas. 
           Experto en React, Next.js y el ecosistema Cloud.
