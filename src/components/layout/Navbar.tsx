@@ -68,8 +68,11 @@ export default function Navbar() {
             );
           })}
           
-          <div className="ml-4 pl-4 border-l border-zinc-200 dark:border-zinc-800">
+          <div className="ml-4 pl-4 border-l border-zinc-200 dark:border-zinc-800 flex items-center gap-4">
              <ThemeToggle />
+             <Link href="/login" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-sm font-medium transition-colors">
+                Ingresar
+             </Link>
           </div>
         </div>
 
@@ -80,7 +83,7 @@ export default function Navbar() {
              className="text-zinc-900 dark:text-white p-2 z-50 relative"
              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
            >
-             {mobileMenuOpen ? <X /> : <Menu />}
+             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
            </button>
         </div>
       </div>
@@ -109,6 +112,13 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <Link 
+              href="/login" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-lg font-bold transition-colors"
+            >
+              Ingresar
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
