@@ -2,17 +2,72 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, Mail, ArrowRight, Chrome } from "lucide-react";
+import { Github, Mail, ArrowRight, Chrome, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { registerWithEmailAndPassword, loginWithGoogle } = useAuth();
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleGoogleLogin = async () => {
+    setError(null);
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000);
+    try {
+      await loginWithGoogle();
+      router.push("/dashboard");
+    } catch (err: unknown) {
+        console.error(err);
+        setError("Error al registrarse con Google.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setIsLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const confirmPassword = formData.get("confirm-password") as string;
+
+    if (password !== confirmPassword) {
+      setError("Las contraseñas no coinciden.");
+      setIsLoading(false);
+      return;
+    }
+
+    if (password.length < 6) {
+        setError("La contraseña debe tener al menos 6 caracteres.");
+        setIsLoading(false);
+        return;
+    }
+
+    const firstName = formData.get("first-name") as string;
+    const lastName = formData.get("last-name") as string;
+    const displayName = `${firstName} ${lastName}`.trim();
+
+    try {
+      await registerWithEmailAndPassword(email, password, displayName);
+      // User is created and logged in automatically by Firebase
+      router.push("/dashboard");
+    } catch (err: unknown) {
+        console.error(err);
+        const firebaseError = err as { code?: string };
+        if (firebaseError.code === 'auth/email-already-in-use') {
+             setError("El correo electrónico ya está en uso.");
+        } else {
+             setError("Error al crear la cuenta. Inténtalo de nuevo.");
+        }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,12 +92,29 @@ export default function RegisterPage() {
       </div>
 
       <div className="mt-8 space-y-6">
+        {error && (
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg text-sm flex items-center gap-2">
+                <AlertCircle className="w-4 h-4" />
+                {error}
+            </div>
+        )}
+
         <div className="grid grid-cols-2 gap-3">
-          <button className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all">
+          <button
+             type="button"
+             onClick={handleGoogleLogin}
+             disabled={isLoading}
+             className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <Chrome className="w-4 h-4" />
             Google
           </button>
-          <button className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all">
+          <button 
+             type="button"
+             className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all opacity-50 cursor-not-allowed"
+             disabled
+             title="Próximamente"
+          >
             <Github className="w-4 h-4" />
             GitHub
           </button>
@@ -69,7 +141,6 @@ export default function RegisterPage() {
                   id="first-name"
                   name="first-name"
                   type="text"
-                  required
                   className="block w-full rounded-lg border border-zinc-300 dark:border-zinc-800 px-4 py-3 bg-white dark:bg-zinc-900/50 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition-colors"
                   placeholder="Juan"
                 />
@@ -82,7 +153,6 @@ export default function RegisterPage() {
                   id="last-name"
                   name="last-name"
                   type="text"
-                  required
                   className="block w-full rounded-lg border border-zinc-300 dark:border-zinc-800 px-4 py-3 bg-white dark:bg-zinc-900/50 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition-colors"
                   placeholder="Pérez"
                 />

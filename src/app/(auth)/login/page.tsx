@@ -2,17 +2,49 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, Mail, ArrowRight, Chrome } from "lucide-react";
+import { Github, Mail, ArrowRight, Chrome, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { loginWithGoogle, loginWithEmailAndPassword } = useAuth();
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleGoogleLogin = async () => {
+    setError(null);
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000);
+    try {
+      await loginWithGoogle();
+      router.push("/dashboard");
+    } catch (err: unknown) {
+        console.error(err);
+        setError("Error al iniciar sesión con Google. Inténtalo de nuevo.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setIsLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    try {
+      await loginWithEmailAndPassword(email, password);
+      router.push("/dashboard");
+    } catch (err: unknown) {
+        console.error(err);
+        setError("Credenciales incorrectas o error en el servidor.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,12 +69,29 @@ export default function LoginPage() {
       </div>
 
       <div className="mt-8 space-y-6">
+        {error && (
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg text-sm flex items-center gap-2">
+                <AlertCircle className="w-4 h-4" />
+                {error}
+            </div>
+        )}
+
         <div className="grid grid-cols-2 gap-3">
-          <button className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all">
+          <button 
+            type="button"
+            onClick={handleGoogleLogin}
+            disabled={isLoading}
+            className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <Chrome className="w-4 h-4" />
             Google
           </button>
-          <button className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all">
+          <button 
+            type="button"
+            className="flex items-center justify-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white transition-all opacity-50 cursor-not-allowed"
+            disabled
+            title="Próximamente"
+          >
             <Github className="w-4 h-4" />
             GitHub
           </button>
@@ -121,11 +170,7 @@ export default function LoginPage() {
           >
             {isLoading ? (
                <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></span>
-            ) : (
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  {/* Icon on left if needed */}
-                </span>
-            )}
+            ) : null}
             {isLoading ? "Iniciando sesión..." : "Ingresar a mi cuenta"}
             {!isLoading && <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />}
           </motion.button>

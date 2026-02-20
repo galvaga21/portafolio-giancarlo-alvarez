@@ -1,7 +1,7 @@
 "use client";
 
 
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink/* , Github */ } from "lucide-react";
 import Section from "@/components/ui/Section";
 
 import { featuredProjects } from "@/data/projects";
@@ -47,9 +47,9 @@ export default function Projects() {
               </div>
 
               <div className="flex justify-between items-center mt-auto pt-4 border-t border-zinc-200 dark:border-zinc-800">
-                <a href={project.github} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-white transition-colors">
+                {/* <a href={project.github} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:text-white transition-colors">
                   <Github size={16} /> Code
-                </a>
+                </a> */}
                 <a href={project.demo} className="flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 transition-colors font-medium">
                   Live Demo <ExternalLink size={16} />
                 </a>
