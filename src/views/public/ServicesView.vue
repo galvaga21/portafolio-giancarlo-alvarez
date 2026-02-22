@@ -44,20 +44,23 @@ const services = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
       <div
         v-for="(service, index) in services"
         :key="index"
-        class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg dark:hover:shadow-[0_10px_30px_rgba(56,189,248,0.05)] opacity-0 animate-fade-in-up group shadow-sm"
+        class="relative bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(56,189,248,0.1)] dark:hover:shadow-[0_15px_40px_rgba(56,189,248,0.05)] opacity-0 animate-fade-in-up group shadow-sm hover:border-sky-300 dark:hover:border-sky-500/50 overflow-hidden"
         :style="`animation-delay: ${index * 100}ms`"
       >
-        <div class="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-200 dark:border-slate-700">
-          <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top Gradient Line on Hover -->
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-sky-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+        <div class="w-16 h-16 bg-sky-50 dark:bg-slate-900/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 border border-sky-100 dark:border-slate-700 group-hover:bg-gradient-to-br group-hover:from-sky-500 group-hover:to-indigo-600 shadow-sm relative z-10">
+          <svg class="w-8 h-8 text-sky-500 dark:text-sky-400 group-hover:text-white transition-colors duration-500 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="service.icon"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">{{ service.title }}</h3>
-        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors relative z-10">{{ service.title }}</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm relative z-10">
           {{ service.description }}
         </p>
       </div>

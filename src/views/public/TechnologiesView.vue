@@ -45,7 +45,7 @@ const categories = [
           <span
             v-for="skill in category.skills"
             :key="skill"
-            class="px-4 py-2 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 rounded-full text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:border-sky-300 dark:hover:border-sky-500/50 hover:text-sky-600 dark:hover:text-sky-400 transition-all duration-300 cursor-default shadow-sm hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:-translate-y-1"
+            class="px-4 py-2 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 rounded-full text-slate-800 dark:text-slate-300 text-sm font-semibold hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-500 hover:border-transparent hover:text-white dark:hover:text-white transition-all duration-300 cursor-default shadow-sm hover:shadow-[0_10px_20px_rgba(56,189,248,0.25)] hover:-translate-y-1"
           >
             {{ skill }}
           </span>
