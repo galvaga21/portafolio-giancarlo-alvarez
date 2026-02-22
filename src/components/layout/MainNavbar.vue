@@ -69,24 +69,38 @@ const navLinks = [
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="isMobileMenuOpen" class="md:hidden bg-slate-900 border-b border-slate-800">
-      <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <li v-for="link in navLinks" :key="link.path">
-          <RouterLink
-            :to="link.path"
-            @click="isMobileMenuOpen = false"
-            class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800"
-            active-class="bg-slate-800 text-sky-400"
-          >
-            {{ link.name }}
-          </RouterLink>
-        </li>
-        <li class="pt-4">
-          <a href="#" class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600">
-            Descargar CV
-          </a>
-        </li>
-      </ul>
-    </div>
+    <transition name="slide-down">
+      <div v-show="isMobileMenuOpen" class="md:hidden absolute top-16 left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl z-40 overflow-hidden">
+        <ul class="px-4 pt-2 pb-6 space-y-2">
+          <li v-for="link in navLinks" :key="link.path">
+            <RouterLink
+              :to="link.path"
+              @click="isMobileMenuOpen = false"
+              class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
+              active-class="bg-slate-800 text-sky-400 border border-slate-700/50"
+            >
+              {{ link.name }}
+            </RouterLink>
+          </li>
+          <li class="pt-4 px-2">
+            <a href="#" class="flex justify-center w-full px-4 py-3 text-base font-medium text-white bg-sky-500 rounded-xl hover:bg-sky-600 transition-colors shadow-lg shadow-sky-500/20">
+              Descargar CV
+            </a>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </header>
 </template>
+
+<style scoped>
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
