@@ -28,7 +28,17 @@
               </div>
               <div class="break-all sm:break-normal overflow-hidden max-w-full">
                 <h4 class="text-sm font-medium text-slate-400">Email</h4>
-                <a href="mailto:hola@giancarloalvarez.com" class="text-base sm:text-lg font-semibold text-white hover:text-sky-400 transition-colors">hola@giancarloalvarez.com</a>
+                <a href="mailto:galvaga21@gmail.com" class="text-base sm:text-lg font-semibold text-white hover:text-sky-400 transition-colors">galvaga21@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center items-start group">
+              <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center shrink-0 mb-3 sm:mb-0 sm:mr-4 border border-slate-700 group-hover:border-green-500 group-hover:bg-green-500/10 transition-all duration-300">
+                <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-medium text-slate-400">Teléfono</h4>
+                <a href="tel:+51947770996" class="text-base sm:text-lg font-semibold text-white hover:text-green-400 transition-colors">+51 947770996</a>
               </div>
             </div>
 
@@ -38,7 +48,7 @@
               </div>
               <div>
                 <h4 class="text-sm font-medium text-slate-400">Ubicación</h4>
-                <p class="text-base sm:text-lg font-semibold text-white">Medellín, Colombia</p>
+                <p class="text-base font-semibold text-white truncate max-w-full" title="Pasaje Los Amautas 1037, 15427, Lima">Pasaje Los Amautas 1037, Lima</p>
               </div>
             </div>
           </div>

@@ -1,25 +1,31 @@
 <script setup lang="ts">
 const educationItems = [
   {
-    title: 'Ingeniería Informática',
-    institution: 'Universidad Tecnológica de la Información',
-    date: '2020 - 2024',
-    description: 'Licenciatura enfocada en ciencias de la computación, arquitectura de software, bases de datos complejas y metodologías ágiles de trabajo. Proyecto de titulación con honores.'
+    title: 'Ingeniería Informática: Tecnologías de la Información',
+    institution: 'Universidad Ricardo Palma (Lima)',
+    date: '2026',
+    description: 'Formación profesional orientada al desarrollo e ingeniería de software integral.'
   },
   {
-    title: 'Diplomado en Desarrollo Fullstack Moderno',
-    institution: 'Tech Institute Avanzado',
-    date: '2023',
-    description: 'Especialización intensiva en el ecosistema JavaScript/TypeScript, construyendo APIS robustas orientadas a micro-servicios y SPA altamente interactivas.'
+    title: 'Desarrollador MongoDB',
+    institution: 'Cibertec (Lima)',
+    date: '06/2023',
+    description: 'Especialización en el manejo, modelado e implementación de bases de datos NoSQL con MongoDB.'
   },
   {
-    title: 'Certificación de Arquitectura Cloud',
-    institution: 'Cloud Native Training',
-    date: '2022',
-    description: 'Diseño de infraestructuras escalables, gestión de costos, serverless y despliegues automáticos (CI/CD) en la nube.'
+    title: 'Idioma Inglés Intermedio',
+    institution: 'Instituto Británico (Lima)',
+    date: '07/2019',
+    description: 'Dominio intermedio del idioma que me permite leer y comprender documentación técnica avanzada.'
   }
 ]
+
+const certificates = [
+  'Certificado MongoDB Developer',
+  'Certificado Taller SQL SERVER'
+]
 </script>
+
 <template>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-[80vh]">
     <div class="text-center mb-16 opacity-0 animate-fade-in-up">
@@ -27,11 +33,12 @@ const educationItems = [
         Formación Académica
       </h1>
       <p class="text-slate-400 text-lg">
-        Mi trayectoria educativa y certificaciones que respaldan mi conocimiento técnico en ingeniería.
+        La base teórica y académica de mi camino como profesional tecnológico.
       </p>
     </div>
+
     <!-- Timeline Wrapper -->
-    <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+    <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent mb-24">
 
       <div
         v-for="(item, index) in educationItems"
@@ -61,5 +68,20 @@ const educationItems = [
         </div>
       </div>
     </div>
+
+    <!-- Certificados List -->
+    <div class="bg-slate-800/30 rounded-3xl p-8 border border-slate-700/50 opacity-0 animate-fade-in-up delay-500">
+      <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+        <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+        Certificados de Trabajo
+      </h3>
+      <ul class="space-y-4">
+        <li v-for="cert in certificates" :key="cert" class="flex items-center text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-indigo-500 mr-4"></span>
+          {{ cert }}
+        </li>
+      </ul>
+    </div>
+
   </div>
 </template>

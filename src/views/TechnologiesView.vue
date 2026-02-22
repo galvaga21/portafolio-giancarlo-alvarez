@@ -1,20 +1,20 @@
 <script setup lang="ts">
 const categories = [
   {
-    name: 'Frontend',
-    skills: ['Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Nuxt', 'HTML5/CSS3']
+    name: 'Lenguajes de Programación',
+    skills: ['Java', 'Python', 'C#', 'JavaScript', 'TypeScript']
   },
   {
-    name: 'Backend',
-    skills: ['Node.js', 'Express', 'NestJS', 'Python', 'Django', 'Java', 'Spring Boot']
+    name: 'Web Frontend & Mobile',
+    skills: ['Angular', 'React', 'Vue', 'React Native', 'Quasar']
   },
   {
-    name: 'Base de Datos',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase']
+    name: 'Gestión de Bases de Datos',
+    skills: ['SQL Server', 'MySQL', 'MongoDB']
   },
   {
-    name: 'Herramientas & DevOps',
-    skills: ['Git', 'Docker', 'AWS', 'Linux', 'CI/CD', 'Jest/Vitest', 'Vite']
+    name: 'Herramientas, Cloud & Scrum',
+    skills: ['AWS', 'Firebase', 'Git', 'Jira', 'Scrum']
   }
 ]
 </script>
@@ -23,10 +23,10 @@ const categories = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-[80vh]">
     <div class="text-center mb-16 opacity-0 animate-fade-in-up">
       <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 mb-6">
-        Tecnologías & Herramientas
+        Mis Aptitudes & Tecnologías
       </h1>
       <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-        El ecosistema tecnológico que utilizo para construir aplicaciones modernas, escalables y mantenibles. Me mantengo en constante aprendizaje.
+        He forjado mi experiencia manejando un stack versátil que me permite abordar proyectos desde la capa de datos hasta la interfaz visual.
       </p>
     </div>
 
@@ -50,6 +50,16 @@ const categories = [
             {{ skill }}
           </span>
         </div>
+      </div>
+    </div>
+
+    <!-- Skills Adicionales -->
+    <div class="mt-20 text-center opacity-0 animate-fade-in-up delay-500">
+      <h3 class="text-2xl font-bold text-white mb-8">Intereses Persoanles</h3>
+      <div class="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
+        <div class="bg-slate-800/40 px-6 py-3 rounded-xl border border-slate-700 text-slate-300">🏊‍♂️ Practicar Natación</div>
+        <div class="bg-slate-800/40 px-6 py-3 rounded-xl border border-slate-700 text-slate-300">📚 Leer sobre Tecnología e IA</div>
+        <div class="bg-slate-800/40 px-6 py-3 rounded-xl border border-slate-700 text-slate-300">🤝 Compartir Conocimientos</div>
       </div>
     </div>
   </div>

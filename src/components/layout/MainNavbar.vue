@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import cvPdfUrl from '@/assets/GiancarloJoel_AlvarezGallardo_CV.pdf'
 
 const isMobileMenuOpen = ref(false)
 
@@ -43,7 +44,7 @@ const navLinks = [
               </RouterLink>
             </li>
             <li>
-              <a href="#" class="px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-lg shadow-sky-500/30">
+              <a :href="cvPdfUrl" download="GiancarloJoel_AlvarezGallardo_CV.pdf" target="_blank" class="block px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-lg shadow-sky-500/30">
                 Descargar CV
               </a>
             </li>
@@ -83,7 +84,7 @@ const navLinks = [
             </RouterLink>
           </li>
           <li class="pt-4 px-2">
-            <a href="#" class="flex justify-center w-full px-4 py-3 text-base font-medium text-white bg-sky-500 rounded-xl hover:bg-sky-600 transition-colors shadow-lg shadow-sky-500/20">
+            <a :href="cvPdfUrl" download="GiancarloJoel_AlvarezGallardo_CV.pdf" target="_blank" class="flex justify-center w-full px-4 py-3 text-base font-medium text-white bg-sky-500 rounded-xl hover:bg-sky-600 transition-colors shadow-lg shadow-sky-500/20">
               Descargar CV
             </a>
           </li>
