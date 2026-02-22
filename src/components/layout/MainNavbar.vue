@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import cvPdfUrl from '@/assets/GiancarloJoel_AlvarezGallardo_CV.pdf'
 
 const isMobileMenuOpen = ref(false)
 
@@ -32,7 +31,7 @@ const navLinks = [
 
         <!-- Desktop Menu -->
         <nav class="hidden md:block">
-          <ul class="flex space-x-6">
+          <ul class="flex items-center space-x-6">
             <li v-for="link in navLinks" :key="link.path">
               <RouterLink
                 :to="link.path"
@@ -44,9 +43,9 @@ const navLinks = [
               </RouterLink>
             </li>
             <li>
-              <a :href="cvPdfUrl" download="GiancarloJoel_AlvarezGallardo_CV.pdf" target="_blank" class="block px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors duration-300 shadow-lg shadow-sky-500/30">
-                Descargar CV
-              </a>
+              <RouterLink to="/login" class="block px-5 py-2.5 text-sm font-bold text-slate-900 bg-white rounded-lg hover:bg-sky-400 hover:text-white transition-all duration-300 shadow-lg shadow-white/10 hover:shadow-sky-500/30">
+                Iniciar Sesión
+              </RouterLink>
             </li>
           </ul>
         </nav>
@@ -84,9 +83,9 @@ const navLinks = [
             </RouterLink>
           </li>
           <li class="pt-4 px-2">
-            <a :href="cvPdfUrl" download="GiancarloJoel_AlvarezGallardo_CV.pdf" target="_blank" class="flex justify-center w-full px-4 py-3 text-base font-medium text-white bg-sky-500 rounded-xl hover:bg-sky-600 transition-colors shadow-lg shadow-sky-500/20">
-              Descargar CV
-            </a>
+            <RouterLink to="/login" @click="isMobileMenuOpen = false" class="flex justify-center w-full px-4 py-3 text-base font-bold text-slate-900 bg-white rounded-xl hover:bg-sky-400 hover:text-white transition-colors shadow-lg shadow-white/10">
+              Iniciar Sesión
+            </RouterLink>
           </li>
         </ul>
       </div>

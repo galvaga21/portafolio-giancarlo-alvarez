@@ -1,26 +1,34 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import MainNavbar from '@/components/layout/MainNavbar.vue'
+import { computed } from 'vue'
+import { useRoute, RouterView } from 'vue-router'
+import PublicLayout from '@/layouts/PublicLayout.vue'
+import AuthLayout from '@/layouts/AuthLayout.vue'
+import DashboardLayout from '@/layouts/DashboardLayout.vue'
+
+const route = useRoute()
+
+// Lógica de renderizado dinámico del layout según el meta definido en el Vue Router
+const layout = computed(() => {
+  switch (route.meta.layout) {
+    case 'auth': return AuthLayout
+    case 'dashboard': return DashboardLayout
+    default: return PublicLayout
+  }
+})
 </script>
 
 <template>
-  <MainNavbar />
-
-  <main class="flex-grow pt-16">
+  <component :is="layout">
     <RouterView v-slot="{ Component }">
       <transition name="fade" mode="out-in">
-        <component :is="Component" />
+        <component :is="Component" :key="route.fullPath" />
       </transition>
     </RouterView>
-  </main>
-
-  <footer class="py-6 text-center text-slate-500 text-sm border-t border-slate-800 mt-auto bg-slate-900/50">
-    <p>&copy; {{ new Date().getFullYear() }} Giancarlo Alvarez. Todos los derechos reservados.</p>
-  </footer>
+  </component>
 </template>
 
 <style>
-/* Estilos adicionales de transición entre rutas */
+/* Animaciones de transición global entre rutas */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
