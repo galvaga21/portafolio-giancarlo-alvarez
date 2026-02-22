@@ -34,12 +34,12 @@ const services = [
 </script>
 
 <template>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-[80vh]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-[80vh] transition-colors duration-300">
     <div class="text-center mb-16 opacity-0 animate-fade-in-up">
-      <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 mb-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 dark:from-sky-400 dark:to-indigo-500 mb-6">
         Mis Servicios
       </h1>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
         Ofrezco soluciones integrales de desarrollo de software, cubriendo desde la conceptualización hasta el despliegue en producción.
       </p>
     </div>
@@ -48,16 +48,16 @@ const services = [
       <div
         v-for="(service, index) in services"
         :key="index"
-        class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-700/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(56,189,248,0.05)] opacity-0 animate-fade-in-up group"
+        class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg dark:hover:shadow-[0_10px_30px_rgba(56,189,248,0.05)] opacity-0 animate-fade-in-up group shadow-sm"
         :style="`animation-delay: ${index * 100}ms`"
       >
-        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-700">
-          <svg class="w-7 h-7 text-sky-400 group-hover:text-indigo-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-200 dark:border-slate-700">
+          <svg class="w-7 h-7 text-sky-600 dark:text-sky-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="service.icon"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-slate-100 mb-3 group-hover:text-sky-400 transition-colors">{{ service.title }}</h3>
-        <p class="text-slate-400 leading-relaxed text-sm">
+        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">{{ service.title }}</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
           {{ service.description }}
         </p>
       </div>

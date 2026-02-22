@@ -23,11 +23,11 @@ const submitForm = () => {
   <div class="flex-1 flex flex-col md:flex-row w-full min-h-screen">
 
     <!-- Left Side: Forms -->
-    <div class="w-full md:w-1/2 lg:w-5/12 bg-white flex flex-col pt-8 md:pt-0">
+    <div class="w-full md:w-1/2 lg:w-5/12 bg-white dark:bg-[#0f172a] flex flex-col pt-8 md:pt-0 transition-colors duration-300">
 
       <!-- Logo Header -->
       <div class="px-8 md:px-12 py-6">
-        <RouterLink to="/" class="flex items-center text-slate-800 font-bold text-xl hover:opacity-80 transition-opacity w-fit">
+        <RouterLink to="/" class="flex items-center text-slate-800 dark:text-white font-bold text-xl hover:opacity-80 transition-opacity w-fit">
           <svg class="w-6 h-6 mr-2 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           Giancarlo_Alvarez
         </RouterLink>
@@ -37,10 +37,10 @@ const submitForm = () => {
       <div class="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24">
 
         <div class="mb-10 animate-fade-in-up">
-          <h2 class="text-3xl font-bold text-slate-900 mb-2">Bienvenido de nuevo</h2>
-          <p class="text-slate-500 text-sm">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Bienvenido de nuevo</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm">
             ¿No tienes una cuenta?
-            <RouterLink to="/register" class="text-indigo-600 font-semibold hover:underline ml-1">
+            <RouterLink to="/register" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline ml-1">
               Regístrate aquí
             </RouterLink>
           </p>
@@ -49,26 +49,26 @@ const submitForm = () => {
         <form @submit.prevent="submitForm" class="space-y-5 animate-fade-in-up delay-100">
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Correo Electrónico</label>
-            <input v-model="formParams.email" type="email" placeholder="tucorreo@ejemplo.com" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Correo Electrónico</label>
+            <input v-model="formParams.email" type="email" placeholder="tucorreo@ejemplo.com" required class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500">
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Contraseña</label>
             <div class="relative">
-              <input v-model="formParams.password" type="password" placeholder="••••••••" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+              <input v-model="formParams.password" type="password" placeholder="••••••••" required class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500">
             </div>
           </div>
 
           <div class="flex items-center justify-between text-sm mt-1">
             <label class="flex items-center space-x-2 cursor-pointer">
-              <input v-model="formParams.remember" type="checkbox" class="rounded border-slate-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-              <span class="text-slate-600">Recordarme</span>
+              <input v-model="formParams.remember" type="checkbox" class="rounded dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+              <span class="text-slate-600 dark:text-slate-400">Recordarme</span>
             </label>
-            <a href="#" class="text-indigo-600 font-semibold hover:underline">¿Olvidaste tu contraseña?</a>
+            <a href="#" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">¿Olvidaste tu contraseña?</a>
           </div>
 
-          <button type="submit" class="w-full bg-slate-900 text-white font-semibold py-3 px-4 rounded-lg hover:bg-slate-800 transition-all duration-300 mt-6 shadow-lg shadow-slate-900/20">
+          <button type="submit" class="w-full bg-slate-900 dark:bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-slate-800 dark:hover:bg-indigo-500 transition-all duration-300 mt-6 shadow-lg shadow-slate-900/20 dark:shadow-indigo-900/20">
             Iniciar Sesion
           </button>
         </form>
@@ -77,21 +77,21 @@ const submitForm = () => {
         <div class="mt-8">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-slate-200"></div>
+              <div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 bg-white text-slate-500">O ingresa con</span>
+              <span class="px-2 bg-white dark:bg-[#0f172a] text-slate-500 dark:text-slate-400 transition-colors duration-300">O ingresa con</span>
             </div>
           </div>
 
           <div class="mt-6 grid grid-cols-2 gap-3">
-            <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-slate-300 rounded-lg shadow-sm bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+            <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg shadow-sm bg-white dark:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
               <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
               </svg>
               Google
             </button>
-            <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-slate-300 rounded-lg shadow-sm bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+            <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg shadow-sm bg-white dark:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
               <svg class="h-5 w-5 text-[#1877F2] mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
               </svg>
