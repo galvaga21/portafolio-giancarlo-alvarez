@@ -21,8 +21,8 @@ const navLinks = [
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 mt-2">
+    <div class="px-3 sm:px-6 lg:px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
@@ -82,7 +82,7 @@ const navLinks = [
 
     <!-- Mobile Menu -->
     <transition name="slide-down">
-      <div v-show="isMobileMenuOpen" class="md:hidden absolute top-16 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-2xl z-40 overflow-hidden transition-colors duration-300">
+      <div v-show="isMobileMenuOpen" class="md:hidden absolute top-[4.5rem] left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/80 dark:border-slate-700/80 rounded-2xl shadow-2xl z-40 overflow-hidden transition-colors duration-300">
         <ul class="px-4 pt-2 pb-6 space-y-2">
           <li v-for="link in navLinks" :key="link.path">
             <RouterLink
