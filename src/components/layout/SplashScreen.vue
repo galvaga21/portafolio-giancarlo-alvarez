@@ -59,9 +59,7 @@ onUnmounted(() => {
           <div class="absolute inset-0 bg-sky-500/20 dark:bg-sky-500/30 blur-xl rounded-full scale-125 z-0 animate-pulse transition-colors"></div>
         </div>
 
-        <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-600 dark:from-sky-400 dark:to-indigo-500 uppercase tracking-widest mb-8 sm:mb-10 animate-scale-up text-center drop-shadow-sm transition-colors">
-          Giancarlo_Alvarez
-        </h1>
+        <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez Logo" class="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full object-cover border-4 border-slate-100 dark:border-slate-800 shadow-xl mb-6 sm:mb-8 animate-scale-up drop-shadow-sm transition-all bg-slate-900 dark:bg-transparent" />
 
         <!-- Consola de Carga Moderna -->
         <div class="w-full bg-white dark:bg-[#111111] rounded-xl border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl overflow-hidden animate-fade-in-delayed transition-colors">

@@ -26,8 +26,8 @@ const navLinks = [
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <RouterLink to="/" class="text-xl font-bold bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
-            Giancarlo_Alvarez
+          <RouterLink to="/" class="flex items-center">
+            <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-[3px] border-slate-100 dark:border-slate-800 shadow-md transition-transform duration-300 hover:scale-[1.05] bg-slate-900 dark:bg-transparent" />
           </RouterLink>
         </div>
 

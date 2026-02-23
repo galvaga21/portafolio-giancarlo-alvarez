@@ -10,11 +10,9 @@ const { isDark, toggleTheme } = useTheme()
     <!-- Sidebar -->
     <aside class="w-64 bg-white dark:bg-[#0f172a] border-r border-slate-200 dark:border-slate-800 hidden md:flex flex-col h-screen sticky top-0 transition-colors duration-300">
       <div class="px-6 py-8">
-        <RouterLink to="/" class="text-xl font-bold text-slate-800 dark:text-white tracking-tight flex items-center">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg mr-3 flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-          Dashboard
+        <RouterLink to="/" class="flex flex-col items-start gap-4 hover:opacity-80 transition-opacity">
+          <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez Logo" class="h-12 w-12 md:h-14 md:w-14 rounded-full object-cover border-[3px] border-slate-100 dark:border-slate-800 shadow-sm transition-transform duration-300 hover:scale-[1.05] bg-slate-900 dark:bg-transparent" />
+          <span class="text-xs font-bold text-slate-500 tracking-wider uppercase">Dashboard Panel</span>
         </RouterLink>
       </div>
       <nav class="flex-1 px-4 space-y-1 mt-4">

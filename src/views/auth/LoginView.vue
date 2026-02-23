@@ -27,9 +27,8 @@ const submitForm = () => {
 
       <!-- Logo Header -->
       <div class="px-8 md:px-12 py-6">
-        <RouterLink to="/" class="flex items-center text-slate-800 dark:text-white font-bold text-xl hover:opacity-80 transition-opacity w-fit">
-          <svg class="w-6 h-6 mr-2 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          Giancarlo_Alvarez
+        <RouterLink to="/" class="flex items-center hover:opacity-80 transition-opacity w-fit mt-2">
+          <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-[3px] border-slate-100 dark:border-slate-800 shadow-sm transition-transform duration-300 hover:scale-[1.05] bg-slate-900 dark:bg-transparent" />
         </RouterLink>
       </div>
 

@@ -4,7 +4,6 @@ import { useRoute, RouterView } from 'vue-router'
 import PublicLayout from '@/layouts/PublicLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
-import SplashScreen from '@/components/layout/SplashScreen.vue'
 
 const route = useRoute()
 
@@ -19,8 +18,6 @@ const layout = computed(() => {
 </script>
 
 <template>
-  <SplashScreen />
-
   <component :is="layout">
     <RouterView v-slot="{ Component }">
       <transition name="fade" mode="out-in">
