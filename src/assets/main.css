@@ -1,15 +1,30 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* =====================================================
+   PALETA OFICIAL — Extraída del logo de Giancarlo Alvarez
+   =====================================================
+   --brand-navy  : Fondo oscuro / dark background (#232946)
+   --brand-blue  : Azul principal / botones / acentos (#3B6FC9)
+   --brand-cyan  : Azul cielo brillante / highlights (#3EC6E8)
+   ===================================================== */
 :root {
-  --color-accent: #38bdf8; /* sky-400 */
+  --brand-navy:      #232946;
+  --brand-navy-deep: #1a2035;
+  --brand-blue:      #3B6FC9;
+  --brand-blue-hover:#3260b5;
+  --brand-cyan:      #3EC6E8;
+  --brand-cyan-hover:#31b5d6;
+
+  /* Sombras de color de marca */
+  --shadow-blue: rgba(59, 111, 201, 0.35);
+  --shadow-cyan: rgba(62, 198, 232, 0.35);
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -21,6 +36,39 @@ body {
   min-height: 100vh;
 }
 
+/* =====================================================
+   CLASES UTILITARIAS DE MARCA
+   ===================================================== */
+
+/* Gradiente principal de marca (horizontal) */
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-cyan) 100%);
+}
+
+/* Gradiente de texto de marca */
+.brand-text-gradient {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fondo dark mode de marca (navy) */
+.brand-dark-bg {
+  background-color: var(--brand-navy);
+}
+
+/* Sombra de brillo de marca */
+.brand-glow {
+  box-shadow: 0 0 30px var(--shadow-blue);
+}
+.brand-glow-cyan {
+  box-shadow: 0 0 30px var(--shadow-cyan);
+}
+
+/* =====================================================
+   ANIMACIONES GLOBALES
+   ===================================================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -32,28 +32,34 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="bg-white dark:bg-[#0a0f16] border-t border-slate-200 dark:border-slate-800/60 pt-16 pb-8 transition-colors duration-300 relative overflow-hidden">
-    <!-- Luces decorativas en modo oscuro -->
-    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-500/5 dark:bg-sky-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 dark:bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none delay-500"></div>
+  <footer class="bg-white dark:bg-[#0f1628] border-t border-slate-200 dark:border-[#3B6FC9]/10 pt-16 pb-8 transition-colors duration-300 relative overflow-hidden">
+    <!-- Luces decorativas de marca -->
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-[#3B6FC9]/5 dark:bg-[#3B6FC9]/8 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#3EC6E8]/5 dark:bg-[#3EC6E8]/6 rounded-full blur-[120px] pointer-events-none delay-500"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
-        <!-- Logo & Description Section -->
+        <!-- Logo & Description -->
         <div class="lg:col-span-2 space-y-6">
           <RouterLink to="/" class="flex items-center group w-fit">
-            <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez Logo" class="h-12 w-12 rounded-full object-cover border-[3px] border-slate-100 dark:border-slate-800 shadow-md transition-transform duration-300 group-hover:scale-[1.05] bg-slate-900 dark:bg-transparent mr-4" />
-            <span class="text-2xl font-black tracking-tight text-slate-800 dark:text-white group-hover:text-sky-500 transition-colors">Giancarlo Alvarez</span>
+            <img src="@/assets/logo-giancarlo-alvarez.png" alt="Giancarlo Alvarez Logo" class="h-12 w-12 rounded-full object-cover border-[3px] border-slate-100 dark:border-[#3B6FC9]/30 shadow-md transition-transform duration-300 group-hover:scale-[1.05] bg-[#232946] mr-4" />
+            <span class="text-2xl font-black tracking-tight text-slate-800 dark:text-white group-hover:text-[#3B6FC9] dark:group-hover:text-[#3EC6E8] transition-colors">Giancarlo Alvarez</span>
           </RouterLink>
           <p class="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
             Especialista en desarrollo <span class="text-slate-700 dark:text-slate-200 font-semibold">Fullstack</span>, transformando ideas complejas en experiencias web excepcionales, escalables y optimizadas.
           </p>
 
           <div class="flex items-center space-x-4 pt-2">
-            <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer"
-               class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-sky-50 hover:text-sky-600 dark:hover:bg-slate-700 dark:hover:text-white border border-transparent hover:border-sky-300 dark:border-slate-700 dark:hover:border-slate-600 transition-all duration-300 hover:scale-110 shadow-sm"
-               :title="social.name">
+            <a
+              v-for="social in socialLinks"
+              :key="social.name"
+              :href="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-[#1e2845] flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-[#3B6FC9]/10 hover:text-[#3B6FC9] dark:hover:bg-[#3B6FC9]/20 dark:hover:text-[#3EC6E8] border border-transparent dark:border-[#3B6FC9]/15 hover:border-[#3B6FC9]/30 dark:hover:border-[#3B6FC9]/40 transition-all duration-300 hover:scale-110 shadow-sm"
+              :title="social.name"
+            >
               <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
                 <path :d="social.icon"></path>
               </svg>
@@ -66,7 +72,7 @@ const socialLinks = [
           <h3 class="text-slate-900 dark:text-white font-bold mb-6 text-sm uppercase tracking-wider">Explorar</h3>
           <ul class="space-y-3">
             <li v-for="link in quickLinks.slice(0, 3)" :key="link.path">
-              <RouterLink :to="link.path" class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 text-sm font-medium transition-colors inline-block hover:translate-x-1 transform duration-300">
+              <RouterLink :to="link.path" class="text-slate-500 dark:text-slate-400 hover:text-[#3B6FC9] dark:hover:text-[#3EC6E8] text-sm font-medium transition-colors inline-block hover:translate-x-1 transform duration-300">
                 {{ link.name }}
               </RouterLink>
             </li>
@@ -78,7 +84,7 @@ const socialLinks = [
           <h3 class="text-slate-900 dark:text-white font-bold mb-6 text-sm uppercase tracking-wider">Sobre mí</h3>
           <ul class="space-y-3">
             <li v-for="link in quickLinks.slice(3, 6)" :key="link.path">
-              <RouterLink :to="link.path" class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 text-sm font-medium transition-colors inline-block hover:translate-x-1 transform duration-300">
+              <RouterLink :to="link.path" class="text-slate-500 dark:text-slate-400 hover:text-[#3B6FC9] dark:hover:text-[#3EC6E8] text-sm font-medium transition-colors inline-block hover:translate-x-1 transform duration-300">
                 {{ link.name }}
               </RouterLink>
             </li>
@@ -86,8 +92,8 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- Copyright Section -->
-      <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-500">
+      <!-- Copyright -->
+      <div class="border-t border-slate-200 dark:border-[#3B6FC9]/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-500">
         <p>&copy; {{ currentYear }} Giancarlo Alvarez. Todos los derechos reservados.</p>
         <p class="mt-2 md:mt-0 flex items-center">
           Desarrollado con <svg class="w-3.5 h-3.5 mx-1 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> en Perú

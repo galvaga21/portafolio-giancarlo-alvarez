@@ -4,7 +4,7 @@ import HomeView from '../views/public/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // --- RUTAS PÚBLICAS (Portafolio) ---
+    // --- RUTAS PÚBLICAS (Landing Page) ---
     {
       path: '/',
       name: 'home',
@@ -42,50 +42,10 @@ const router = createRouter({
       meta: { layout: 'public' }
     },
 
-    // --- RUTAS DE AUTENTICACIÓN ---
+    // --- FALLBACK: redirige cualquier ruta desconocida al home ---
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/auth/LoginView.vue'),
-      meta: { layout: 'auth' } // Cargar un layout limpio sin barra de navegación compleja
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: () => import('../views/auth/RegisterView.vue'),
-      meta: { layout: 'auth' }
-    },
-
-    // --- RUTAS PRIVADAS (Dashboard) ---
-    {
-      path: '/dashboard',
-      component: () => import('../views/dashboard/DashboardView.vue'),
-      meta: {
-        layout: 'dashboard',
-        requiresAuth: true // Bandera futura para proteger la ruta
-      },
-      children: [
-        {
-          path: '', // Ruta por defecto dentro del dashboard (/dashboard)
-          name: 'dashboard-home',
-          component: () => import('../views/dashboard/home/DashboardHomeView.vue')
-        },
-        {
-          path: 'profile', // /dashboard/profile
-          name: 'dashboard-profile',
-          component: () => import('../views/dashboard/profile/DashboardProfileView.vue')
-        },
-        {
-          path: 'requests', // /dashboard/requests
-          name: 'dashboard-requests',
-          component: () => import('../views/dashboard/requests/DashboardRequestsView.vue')
-        },
-        {
-          path: 'chat', // /dashboard/chat
-          name: 'dashboard-chat',
-          component: () => import('../views/dashboard/chat/DashboardChatView.vue')
-        }
-      ]
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -96,15 +56,5 @@ const router = createRouter({
     }
   }
 })
-
-// === GUARD/MIDDLEWARE DE EXPORTACIÓN (Opcional - Boilerplate futuro) ===
-// router.beforeEach((to, from, next) => {
-//   const authStore = useAuthStore() // Asumiendo Pinia
-//   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
-//      next('/login')
-//   } else {
-//      next()
-//   }
-// })
 
 export default router

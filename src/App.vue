@@ -1,30 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import PublicLayout from '@/layouts/PublicLayout.vue'
-import AuthLayout from '@/layouts/AuthLayout.vue'
-import DashboardLayout from '@/layouts/DashboardLayout.vue'
-
-const route = useRoute()
-
-// Lógica de renderizado dinámico del layout según el meta definido en el Vue Router
-const layout = computed(() => {
-  switch (route.meta.layout) {
-    case 'auth': return AuthLayout
-    case 'dashboard': return DashboardLayout
-    default: return PublicLayout
-  }
-})
 </script>
 
 <template>
-  <component :is="layout">
-    <RouterView v-slot="{ Component }">
+  <PublicLayout>
+    <RouterView v-slot="{ Component }" :key="$route.fullPath">
       <transition name="fade" mode="out-in">
-        <component :is="Component" :key="route.fullPath" />
+        <component :is="Component" />
       </transition>
     </RouterView>
-  </component>
+  </PublicLayout>
 </template>
 
 <style>

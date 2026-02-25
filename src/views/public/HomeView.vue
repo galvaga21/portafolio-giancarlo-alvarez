@@ -23,12 +23,13 @@ const mainTechs = ['React', 'Angular', 'Vue', 'Java', 'Python', 'C#', 'SQL Serve
 </script>
 
 <template>
-  <div class="relative overflow-x-hidden min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center pt-16 md:pt-24 pb-20 transition-colors duration-300">
+  <div class="relative overflow-x-hidden min-h-screen bg-slate-50 dark:bg-[#151929] flex flex-col items-center pt-16 md:pt-24 pb-20 transition-colors duration-300">
+
     <!-- Hero Section -->
-    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] text-center mt-8 md:mt-0 relative z-10 transition-all duration-700">
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] text-center mt-8 md:mt-0 relative z-10">
       <div class="inline-block relative group animate-fade-in-up">
-        <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-        <h1 class="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 dark:from-sky-400 dark:via-indigo-400 dark:to-purple-500 mb-4 md:mb-6 drop-shadow-sm tracking-tighter leading-tight md:leading-[1.1] uppercase cursor-default">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8] rounded-lg blur opacity-0 group-hover:opacity-25 transition duration-1000 group-hover:duration-200"></div>
+        <h1 class="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8] mb-4 md:mb-6 drop-shadow-sm tracking-tighter leading-tight md:leading-[1.1] uppercase cursor-default">
           Giancarlo Alvarez
         </h1>
       </div>
@@ -41,85 +42,89 @@ const mainTechs = ['React', 'Angular', 'Vue', 'Java', 'Python', 'C#', 'SQL Serve
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 mb-8 w-full sm:w-auto px-4 sm:px-0 animate-fade-in-up delay-100">
-        <RouterLink to="/contact" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-2xl bg-sky-500 text-white font-bold hover:bg-sky-400 hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-[0_10px_30px_rgba(56,189,248,0.4)] dark:shadow-[0_0_20px_rgba(56,189,248,0.2)] dark:hover:shadow-[0_15px_40px_rgba(56,189,248,0.4)] flex items-center justify-center gap-2 group">
+        <RouterLink to="/contact" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-2xl bg-[#3B6FC9] text-white font-bold hover:bg-[#3260b5] hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-[0_10px_30px_rgba(59,111,201,0.45)] flex items-center justify-center gap-2 group">
           <span>Contáctame</span>
           <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </RouterLink>
-        <RouterLink to="/about" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-2xl bg-white dark:bg-slate-800/80 text-slate-700 dark:text-sky-400 border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-md flex items-center justify-center gap-2 group">
+        <RouterLink to="/about" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-2xl bg-white dark:bg-[#232946]/80 text-slate-700 dark:text-[#3EC6E8] border border-slate-200 dark:border-[#3B6FC9]/30 font-bold hover:bg-slate-50 dark:hover:bg-[#232946] hover:border-slate-300 dark:hover:border-[#3B6FC9]/60 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2">
           <span>Ver mi experiencia</span>
         </RouterLink>
       </div>
     </section>
 
     <!-- About Summary Section -->
-    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800/50 transition-colors">
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-[#3B6FC9]/10 transition-colors">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="opacity-0 animate-fade-in-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Resumen <span class="text-sky-500 dark:text-sky-400">Profesional</span></h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Resumen <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8]">Profesional</span></h2>
           <p class="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
             Me destaco por liderar la modernización de interfaces usando React, Next.js y Angular, además de optimizar arquitecturas tecnológicas. Mi objetivo es asegurar siempre la calidad, desde la creación de funcionalidades hasta el correcto despliegue.
           </p>
           <div class="flex gap-6 mb-8">
             <div>
-              <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">casi 2</p>
+              <p class="text-3xl font-bold text-[#3B6FC9]">casi 2</p>
               <p class="text-sm text-slate-500 dark:text-slate-500">Años de Exp.</p>
             </div>
             <div>
-              <p class="text-3xl font-bold text-purple-600 dark:text-purple-400">4+</p>
+              <p class="text-3xl font-bold text-[#3EC6E8]">4+</p>
               <p class="text-sm text-slate-500 dark:text-slate-500">Roles TI Asumidos</p>
             </div>
           </div>
-          <RouterLink to="/about" class="text-sky-600 dark:text-sky-400 font-semibold hover:text-sky-500 dark:hover:text-sky-300 flex items-center group transition-colors">
+          <RouterLink to="/about" class="text-[#3B6FC9] dark:text-[#3EC6E8] font-semibold hover:text-[#3260b5] dark:hover:text-[#31b5d6] flex items-center group transition-colors">
             Conoce más sobre mi trayectoria
             <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
           </RouterLink>
         </div>
         <div class="relative opacity-0 animate-fade-in-up delay-100 hidden md:block w-full max-w-sm mx-auto">
-          <div class="aspect-square md:aspect-[4/3] rounded-2xl border border-slate-200 dark:border-slate-700/50 p-1 flex items-center justify-center relative overflow-hidden group shadow-[0_10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.3)] bg-white dark:bg-slate-800 transition-colors">
-            <div class="absolute inset-0 bg-slate-100/50 dark:bg-slate-800/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+          <div class="aspect-square md:aspect-[4/3] rounded-2xl border border-slate-200 dark:border-[#3B6FC9]/20 p-1 flex items-center justify-center relative overflow-hidden group shadow-[0_10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_40px_rgba(35,41,70,0.5)] bg-white dark:bg-[#232946] transition-colors">
+            <div class="absolute inset-0 bg-slate-100/50 dark:bg-[#232946]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
             <img src="@/assets/giancarlo-alvarez.jpg" alt="Giancarlo Alvarez" class="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Metodología y Enfoque Section -->
-    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800/50 relative z-10 transition-colors">
+    <!-- Filosofía Section -->
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-[#3B6FC9]/10 relative z-10 transition-colors">
       <div class="text-center mb-16 opacity-0 animate-fade-in-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Mi Filosofía de <span class="text-sky-500 dark:text-sky-400">Trabajo</span></h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Mi Filosofía de <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8]">Trabajo</span></h2>
         <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           No solo escribo código, diseño soluciones robustas bajo los más estrictos estándares de la industria, garantizando escalabilidad y mantenimiento a largo plazo.
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white/80 dark:bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-slate-700/50 text-center opacity-0 animate-fade-in-up shadow-sm hover:shadow-[0_15px_40px_rgba(14,165,233,0.1)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent dark:from-sky-500/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-          <div class="w-16 h-16 bg-sky-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-sky-100 dark:border-slate-700 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(14,165,233,0.3)]">
-            <svg class="w-8 h-8 text-sky-500 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+        <!-- Clean Code -->
+        <div class="bg-white/80 dark:bg-[#1e2845]/60 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-[#3B6FC9]/15 text-center opacity-0 animate-fade-in-up shadow-sm hover:shadow-[0_15px_40px_rgba(59,111,201,0.12)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#3B6FC9]/5 to-transparent dark:from-[#3B6FC9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="w-16 h-16 bg-[#3B6FC9]/8 dark:bg-[#232946] rounded-2xl flex items-center justify-center mx-auto mb-6 border border-[#3B6FC9]/15 dark:border-[#3B6FC9]/25 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(59,111,201,0.3)]">
+            <svg class="w-8 h-8 text-[#3B6FC9] dark:text-[#3EC6E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
           </div>
           <h3 class="text-xl font-black text-slate-800 dark:text-white mb-3 relative z-10 tracking-tight">Clean Code</h3>
           <p class="text-sm text-slate-500 dark:text-slate-400 relative z-10 leading-relaxed">Desarrollo usando convenciones limpias, patrones de diseño y principios SOLID.</p>
         </div>
-        <div class="bg-white/80 dark:bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-slate-700/50 text-center opacity-0 animate-fade-in-up delay-100 shadow-sm hover:shadow-[0_15px_40px_rgba(99,102,241,0.1)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent dark:from-indigo-500/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-          <div class="w-16 h-16 bg-indigo-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-indigo-100 dark:border-slate-700 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]">
-            <svg class="w-8 h-8 text-indigo-500 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+        <!-- Metodología Ágil -->
+        <div class="bg-white/80 dark:bg-[#1e2845]/60 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-[#3B6FC9]/15 text-center opacity-0 animate-fade-in-up delay-100 shadow-sm hover:shadow-[0_15px_40px_rgba(59,111,201,0.12)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#3EC6E8]/5 to-transparent dark:from-[#3EC6E8]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="w-16 h-16 bg-[#3EC6E8]/8 dark:bg-[#232946] rounded-2xl flex items-center justify-center mx-auto mb-6 border border-[#3EC6E8]/15 dark:border-[#3EC6E8]/25 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(62,198,232,0.3)]">
+            <svg class="w-8 h-8 text-[#3EC6E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
           </div>
           <h3 class="text-xl font-black text-slate-800 dark:text-white mb-3 relative z-10 tracking-tight">Metodología Ágil</h3>
           <p class="text-sm text-slate-500 dark:text-slate-400 relative z-10 leading-relaxed">Sólida experiencia trabajando bajo el marco de Scrum, integrando entregas continuas.</p>
         </div>
-        <div class="bg-white/80 dark:bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-slate-700/50 text-center opacity-0 animate-fade-in-up delay-200 shadow-sm hover:shadow-[0_15px_40px_rgba(168,85,247,0.1)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent dark:from-purple-500/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-          <div class="w-16 h-16 bg-purple-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-purple-100 dark:border-slate-700 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            <svg class="w-8 h-8 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <!-- Seguridad & Rendimiento -->
+        <div class="bg-white/80 dark:bg-[#1e2845]/60 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-[#3B6FC9]/15 text-center opacity-0 animate-fade-in-up delay-200 shadow-sm hover:shadow-[0_15px_40px_rgba(59,111,201,0.12)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#3B6FC9]/5 to-transparent dark:from-[#3B6FC9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="w-16 h-16 bg-[#3B6FC9]/8 dark:bg-[#232946] rounded-2xl flex items-center justify-center mx-auto mb-6 border border-[#3B6FC9]/15 dark:border-[#3B6FC9]/25 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(59,111,201,0.3)]">
+            <svg class="w-8 h-8 text-[#3B6FC9] dark:text-[#3EC6E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
           </div>
           <h3 class="text-xl font-black text-slate-800 dark:text-white mb-3 relative z-10 tracking-tight">Seguridad & Rendimiento</h3>
           <p class="text-sm text-slate-500 dark:text-slate-400 relative z-10 leading-relaxed">Enfoque proactivo en la optimización de consultas a la BD y latencia de APIs.</p>
         </div>
-        <div class="bg-white/80 dark:bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-slate-700/50 text-center opacity-0 animate-fade-in-up delay-300 shadow-sm hover:shadow-[0_15px_40px_rgba(236,72,153,0.1)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent dark:from-pink-500/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-          <div class="w-16 h-16 bg-pink-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-pink-100 dark:border-slate-700 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(236,72,153,0.3)]">
-            <svg class="w-8 h-8 text-pink-500 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+        <!-- Interfaces UI/UX -->
+        <div class="bg-white/80 dark:bg-[#1e2845]/60 backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-[#3B6FC9]/15 text-center opacity-0 animate-fade-in-up delay-300 shadow-sm hover:shadow-[0_15px_40px_rgba(62,198,232,0.12)] hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#3EC6E8]/5 to-transparent dark:from-[#3EC6E8]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="w-16 h-16 bg-[#3EC6E8]/8 dark:bg-[#232946] rounded-2xl flex items-center justify-center mx-auto mb-6 border border-[#3EC6E8]/15 dark:border-[#3EC6E8]/25 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 relative z-10 shadow-sm group-hover:shadow-[0_0_20px_rgba(62,198,232,0.3)]">
+            <svg class="w-8 h-8 text-[#3EC6E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
           </div>
           <h3 class="text-xl font-black text-slate-800 dark:text-white mb-3 relative z-10 tracking-tight">Interfaces de UI/UX</h3>
           <p class="text-sm text-slate-500 dark:text-slate-400 relative z-10 leading-relaxed">Desarrollo de pantallas interactivas responsivas que garantizan la retención del usuario.</p>
@@ -128,13 +133,13 @@ const mainTechs = ['React', 'Angular', 'Vue', 'Java', 'Python', 'C#', 'SQL Serve
     </section>
 
     <!-- Services Summary Section -->
-    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800/50 relative">
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-[#3B6FC9]/10 relative">
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 opacity-0 animate-fade-in-up">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Lo que <span class="text-indigo-600 dark:text-indigo-400">Hago</span></h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Lo que <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8]">Hago</span></h2>
           <p class="text-slate-600 dark:text-slate-400 max-w-xl">Ayudo a modernizar infraestructuras y a unificar interfaces de usuario mediante la investigación e integración de nuevas tecnologías.</p>
         </div>
-        <RouterLink to="/services" class="hidden md:flex text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-medium items-center group transition-colors">
+        <RouterLink to="/services" class="hidden md:flex text-[#3B6FC9] dark:text-[#3EC6E8] hover:text-[#3260b5] dark:hover:text-[#31b5d6] font-medium items-center group transition-colors">
           Ver todos los servicios
           <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </RouterLink>
@@ -144,53 +149,59 @@ const mainTechs = ['React', 'Angular', 'Vue', 'Java', 'Python', 'C#', 'SQL Serve
         <div
           v-for="(service, index) in topServices"
           :key="index"
-          class="relative bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-3xl p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(56,189,248,0.1)] dark:hover:shadow-[0_15px_40px_rgba(56,189,248,0.05)] hover:-translate-y-2 opacity-0 animate-fade-in-up group overflow-hidden"
+          class="relative bg-white dark:bg-[#1e2845]/60 border border-slate-200 dark:border-[#3B6FC9]/15 rounded-3xl p-8 hover:bg-slate-50 dark:hover:bg-[#232946] transition-all duration-300 hover:shadow-[0_15px_40px_rgba(59,111,201,0.12)] dark:hover:shadow-[0_15px_40px_rgba(59,111,201,0.08)] hover:-translate-y-2 opacity-0 animate-fade-in-up group overflow-hidden"
           :style="`animation-delay: ${index * 150}ms`"
         >
-          <!-- Top Gradient Line on Hover -->
-          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-sky-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          <!-- Top Gradient Line -->
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-          <div class="w-14 h-14 bg-sky-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 border border-sky-100 dark:border-slate-700 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 relative z-10 shadow-sm group-hover:bg-gradient-to-br group-hover:from-sky-500 group-hover:to-indigo-600">
-            <svg class="w-7 h-7 text-sky-500 dark:text-sky-400 group-hover:text-white transition-colors duration-500 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-14 h-14 bg-[#3B6FC9]/8 dark:bg-[#232946] rounded-2xl flex items-center justify-center mb-6 border border-[#3B6FC9]/15 dark:border-[#3B6FC9]/25 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 relative z-10 shadow-sm group-hover:bg-gradient-to-br group-hover:from-[#3B6FC9] group-hover:to-[#3EC6E8]">
+            <svg class="w-7 h-7 text-[#3B6FC9] dark:text-[#3EC6E8] group-hover:text-white transition-colors duration-500 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="service.icon"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 relative z-10 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">{{ service.title }}</h3>
+          <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 relative z-10 group-hover:text-[#3B6FC9] dark:group-hover:text-[#3EC6E8] transition-colors">{{ service.title }}</h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm relative z-10 leading-relaxed">{{ service.description }}</p>
         </div>
       </div>
 
-      <RouterLink to="/services" class="md:hidden mt-8 text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-medium flex items-center justify-center group transition-colors w-full border border-indigo-200 dark:border-indigo-400/20 py-3 rounded-xl bg-indigo-50 dark:bg-indigo-400/5">
+      <RouterLink to="/services" class="md:hidden mt-8 text-[#3B6FC9] dark:text-[#3EC6E8] hover:text-[#3260b5] font-medium flex items-center justify-center group transition-colors w-full border border-[#3B6FC9]/25 dark:border-[#3B6FC9]/20 py-3 rounded-xl bg-[#3B6FC9]/5 dark:bg-[#3B6FC9]/10">
         Ver todos los servicios
         <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </RouterLink>
     </section>
 
-    <!-- Techs & Contact Banner Section -->
-    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-slate-800/50">
+    <!-- Tech Stack & CTA Banner -->
+    <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-[#3B6FC9]/10">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="opacity-0 animate-fade-in-up">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Stack <span class="text-purple-600 dark:text-purple-400">Tecnológico</span></h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B6FC9] to-[#3EC6E8]">Tecnológico</span></h2>
           <p class="text-slate-600 dark:text-slate-400 mb-8">
             Domino desde lenguajes core para Backend como Java y C#, hasta los frameworks reactivos líderes en la industria como Angular y React.
           </p>
           <div class="flex flex-wrap gap-3 mb-8">
-            <span v-for="(tech, idx) in mainTechs" :key="tech" class="relative group overflow-hidden px-5 py-2.5 bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50 rounded-2xl text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-sky-400 dark:hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 transition-all duration-300 hover:shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:-translate-y-1 cursor-default opacity-0 animate-fade-in-up" :style="`animation-delay: ${(idx * 50) + 100}ms`">
-              <span class="text-sky-500 mr-2 opacity-0 -translate-x-2 transition-all duration-300 inline-block w-0 group-hover:w-auto group-hover:opacity-100 group-hover:translate-x-0">/</span>{{ tech }}
+            <span
+              v-for="(tech, idx) in mainTechs"
+              :key="tech"
+              class="relative group overflow-hidden px-5 py-2.5 bg-white dark:bg-[#1e2845]/80 border border-slate-200 dark:border-[#3B6FC9]/20 rounded-2xl text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-[#3B6FC9] dark:hover:border-[#3EC6E8] hover:text-[#3B6FC9] dark:hover:text-[#3EC6E8] transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,111,201,0.2)] hover:-translate-y-1 cursor-default opacity-0 animate-fade-in-up"
+              :style="`animation-delay: ${(idx * 50) + 100}ms`"
+            >
+              <span class="text-[#3EC6E8] mr-2 opacity-0 -translate-x-2 transition-all duration-300 inline-block w-0 group-hover:w-auto group-hover:opacity-100 group-hover:translate-x-0">/</span>{{ tech }}
             </span>
           </div>
-          <RouterLink to="/technologies" class="text-purple-600 dark:text-purple-400 font-semibold hover:text-purple-500 dark:hover:text-purple-300 inline-flex items-center group transition-colors">
+          <RouterLink to="/technologies" class="text-[#3B6FC9] dark:text-[#3EC6E8] font-semibold hover:text-[#3260b5] dark:hover:text-[#31b5d6] inline-flex items-center group transition-colors">
             Explorar todas las tecnologías
             <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
           </RouterLink>
         </div>
 
-        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-500/10 dark:to-purple-500/10 border border-indigo-100 dark:border-indigo-500/20 p-8 sm:p-10 rounded-3xl text-center opacity-0 animate-fade-in-up delay-200 shadow-sm transition-colors">
+        <!-- CTA Banner -->
+        <div class="bg-gradient-to-br from-[#3B6FC9]/8 to-[#3EC6E8]/8 dark:from-[#3B6FC9]/15 dark:to-[#3EC6E8]/10 border border-[#3B6FC9]/20 dark:border-[#3B6FC9]/25 p-8 sm:p-10 rounded-3xl text-center opacity-0 animate-fade-in-up delay-200 shadow-sm transition-colors">
           <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">¿Listo para empezar?</h3>
           <p class="text-slate-600 dark:text-slate-300 mb-8">
             Si buscas un desarrollador integral con experiencia real que garantice la calidad de tus páginas y bases de datos.
           </p>
-          <RouterLink to="/contact" class="inline-block px-8 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold hover:bg-slate-800 dark:hover:bg-slate-200 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto">
+          <RouterLink to="/contact" class="inline-block px-8 py-3 rounded-xl bg-[#3B6FC9] text-white font-bold hover:bg-[#3260b5] transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(59,111,201,0.4)] hover:-translate-y-1 w-full sm:w-auto">
             Contactar ahora
           </RouterLink>
         </div>
@@ -199,9 +210,9 @@ const mainTechs = ['React', 'Angular', 'Vue', 'Java', 'Python', 'C#', 'SQL Serve
 
     <!-- Background Decoration -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/5 rounded-full blur-[120px]"></div>
-      <div class="absolute top-2/4 right-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px]"></div>
-      <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[120px]"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#3B6FC9]/8 dark:bg-[#3B6FC9]/5 rounded-full blur-[120px]"></div>
+      <div class="absolute top-2/4 right-1/4 w-96 h-96 bg-[#3EC6E8]/8 dark:bg-[#3EC6E8]/5 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-[#3B6FC9]/5 dark:bg-[#232946]/30 rounded-full blur-[120px]"></div>
     </div>
   </div>
 </template>
