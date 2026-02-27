@@ -59,8 +59,6 @@ const navLinks = [
             <li>
               <a
                 :href="appUrl"
-                target="_blank"
-                rel="noopener noreferrer"
                 class="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-[#3B6FC9] rounded-lg hover:bg-[#3260b5] transition-all duration-300 shadow-[0_4px_15px_rgba(59,111,201,0.4)] hover:shadow-[0_6px_20px_rgba(59,111,201,0.5)] hover:-translate-y-0.5 border border-[#3B6FC9]/20"
               >
                 <span>Ir a la App</span>
@@ -111,8 +109,6 @@ const navLinks = [
           <li class="pt-4 px-2">
             <a
               :href="appUrl"
-              target="_blank"
-              rel="noopener noreferrer"
               @click="isMobileMenuOpen = false"
               class="flex items-center justify-center gap-2 w-full px-4 py-3 text-base font-bold text-white bg-[#3B6FC9] rounded-xl hover:bg-[#3260b5] transition-colors shadow-md"
             >
